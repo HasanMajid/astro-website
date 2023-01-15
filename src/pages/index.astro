@@ -1,0 +1,56 @@
+---
+import Layout from "../layouts/Layout.astro";
+const name = "Astro";
+const style = "purple";
+const response = await fetch(
+  "https://jsonplaceholder.typicode.com/users?_limit=10"
+);
+const users = await response.json();
+---
+
+<Layout>
+  <h1 class={style}>Welcome to Hasan's world!</h1>
+
+  <p>Hello {name}</p>
+
+  <div class="block">
+    <ul>
+      <h2>Epic List</h2>
+      {users.map((user: { name: String }) => <li>{user.name}</li>)}
+    </ul>
+  </div>
+</Layout>
+
+<style>
+  html,
+  body {
+    background-color: rgb(126, 125, 125);
+  }
+  h1 {
+    color: red;
+  }
+  p {
+    color: aquamarine;
+    font-size: x-large;
+  }
+
+  li {
+    font-size: large;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+
+    color: blue;
+  }
+
+  .block {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    margin-left: -60%;
+  }
+
+  .purple {
+    color: purple;
+  }
+</style>
