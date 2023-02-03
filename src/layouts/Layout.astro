@@ -1,3 +1,10 @@
+---
+export interface Props {
+  title?: string;
+}
+const { title = 'Default Title' } = Astro.props as Props;
+---
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,7 +17,7 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
-    <title>Astro Crash Course</title>
+    <title>{title}</title>
   </head>
   <body>
     <slot />
