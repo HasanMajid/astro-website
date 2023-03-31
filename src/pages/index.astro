@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Showcase from "../components/Showcase";
 const name = "Astro";
 const style = "purple";
 const response = await fetch(
@@ -10,15 +11,16 @@ const users = await response.json();
 
 <Layout>
   <h1 class={style}>Welcome to Hasan's world!</h1>
+  <Showcase/>
 
-  <p>Hello {name}</p>
+  <!-- <p>Hello {name}</p>
 
   <div class="block">
     <ul>
       <h2>Epic List</h2>
       {users.map((user: { name: String }) => <li>{user.name}</li>)}
     </ul>
-  </div>
+  </div> -->
 </Layout>
 
 <style>

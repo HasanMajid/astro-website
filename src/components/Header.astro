@@ -1,5 +1,6 @@
 ---
-import logo from '../images/logo.svg'
+import logo from "../images/logo.svg";
+import { Button } from "@chakra-ui/react";
 ---
 
 <header class="header">
@@ -14,6 +15,7 @@ import logo from '../images/logo.svg'
         <li><a href="/">Home</a></li>
         <li><a href="/about">About</a></li>
         <li><a href="/blog">Blog</a></li>
+        <li><Button client:load color={"white"}>Login</Button></li>
       </ul>
     </nav>
   </div>
